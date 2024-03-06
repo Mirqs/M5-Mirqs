@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body{
+        padding: 25%;
+        font-size: 30px;
+    }
+    input{
+        width: 150px;
+        height: 30px;
+        background-color: rgba(250, 235, 215, 0.193);
+        font-size: 25px;
+        border-radius: 25px;
+    }
+
+    .pp{
+        font-size: 19px;
+        font-style: italic;
+        align-items: center;
+    }
+    .ppo{
+        width: 25px;
+        height: 25px;
+        background-color: rgba(135, 206, 250, 0.499);
+    }
+
+    .btn{
+        text-decoration: none;
+        width: 120px;
+        height: 80px;
+        background-color: orange;
+        padding: 10px 20px;
+        border-radius: 20px;
+        color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .btn:hover{
+        background-color: blue;
+        color: lightblue;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+</style>
+
+<script>
+    function checkPassword(){
+        var password = document.getElementById("passwordBox");
+        var psd = password.value;
+
+        if (psd == "CORDESI"){
+            return true;
+        }
+        else{
+            alert("Доступ запрещен! Неверный пароль!");
+            return false
+        }
+    }    
+    function showPassword(){
+         var password = document.getElementById("passwordBox")
+        if (password.type == "password"){
+            password.type = "text";
+        }
+
+        else{
+            password.type = "password"
+        }
+    }
+    
+</script>
+<body>
+    <h1 style="color: lightcyan;">Авторизация</h1>
+    <p>Для входа введите пароль</p>
+    <p>Пароль: <input type="password" id="passwordBox"></p>
+    <p class="pp"> <input class="ppo" type="checkbox" onclick="showPassword();" >  Отобразить пароль</p>
+    <br>
+    <a class="btn" href="index.html" onclick="return checkPassword();">Войти</a>
+</body>
+</html>
